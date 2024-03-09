@@ -1,0 +1,3400 @@
+#!/bin/bash
+##############################################################################
+###                                                                        ###
+###           FILENAME EXPANSION / REGULAR EXPRESSIONS                     ###
+###                                                                        ###
+### This script provides an "interactive lab" for students learning        ###
+### about the Linux Operating System. The structure of this                ###
+### tutorial consists of a few opening banners, followed by a menu which   ###
+### provides 2 levels of tutorials  - Basic and Practical Application      ###
+###                                                                        ###
+### Author: Murray Edward Saul                                             ###
+### Date: May 24, 2000       Revised for Loyalist College: March, 2024     ###
+###                                                                        ###
+##############################################################################
+
+
+### Change to user's home directory ###
+
+### Create temporary files ###
+
+cat > out.1 <<+
+### The author of this script is using this tutorial to send students'     ###
+The first character indicates information regarding the type
+The next nine characters are combined to provide information
+        - User  (u) - The owner of the account (first set of permissions)
+The chmod command is used to change file and directory
+The Absolute chmod command is a convenient "short-cut"
+Good. The file has been created.
+The "umask" command is used to automatically set file
+The rules for default directory mask settings differ, and
+The Linux command structure to create a new hard link called
+The Linux command structure to create a new symboic link
+The tar utility stands for "tape archive" and
+Good. The Directories have been created.
+Good. The directory has been created.
+Good. The directory has been created
++
+
+cat > out.2 <<+
+### (file will be sent to a directory in Prof's directory ###
+### (file will be sent to a directory in Prof's directory ###
+your current directory.
+        - Character "d" indicates a directory
+The chmod command is used to change file and directory
+to changing file and directory access permissions provided
+directory and file access permissions.
+command to change to your home directory:
+working directory:
+          view the filenames in the directory
+          but you can't view the filenames in the directory.
+directory, you need to set "pass-through" permission
+within your home directory.
+A period "." represents the current directory. This symbol can help
+the user save time in changing permissions for the home directory.
+Assuming that you are in your home directory, you issue
+home directory by typing the command:
+directory is "ls -ld" comamnd.
+Issue the Linux command "ls -ld ." to view your home directory's
+Now, issue a Linux command to create a directory
+called "hands_off" in your current directory:
+Change the permissions for the "hands_off" directory
+Now issue a Linux command to confirm that the directory's
+Now, issue a command to change to the "hands_off" directory:
+friends logon to tux, change their directory to
+YOUR home directory, change to your directory
+in your "hands_off" directory. What happens?
+to your directory or file.
+home directory, as well as setting appropriate permission
+on a "test" directory to allow your friends access to sample
+        - "Pass-through" permission on your home directory
+        - Access permission on your sub-directory
+        - Access permission for files within your sub-directory
+directory, in case you are worried:
+First, change back to your home directory:
+directory's permissions have been modified:
+and directory permissions upon creation or if files
+The rules for default directory mask settings differ, and
+        file in the directory listing
+of disk space allocated with a user's home directory.
+home directory quota is around 5 MegaBytes (Mb). If you
+check the available storage space on your home directory
+up in your home directory by using the
+of your current directory (i.e. $PWD ) is being used.
+current directory ( i.e. "." ).
+directory.
+directory:
+working directory:
+your home directory:
+Assume that you are still in your home directory.
+to create a directory called "B" that is a child
+directory of directory "a1":
+Good. The directory has been created.
+to create a directory called "C" that is a child
+directory of directory "B", and also a directory "D"
+that is a child directory of directory "B":
+Good. The directory has been created
+Assume that you are still in your home directory.
+        - "D" which is a child directory of "a3"
+        - "E" which is a child directory of "D"
+              directory
+Assume that you are still in your home directory.
+        "file1" in directory "E":
+Assume that you are still in your home directory.
+        "file2" in directory "B":
+Assume that you are still in your home directory.
+directory "E" to directory "B" as "file2". Make
+Assume that you are still in your home directory.
+Issue a command to move the directory "E" and its
+contents to the directory "a2":
+Assume that you are still in your home directory.
+directory called "oop244" AND it's child directory
+called "work" at the same time. Assume that directory
+"oop244" will branch-off your home directory. Use
+Enter the Linux command to view directory
+permissions of your current directory. Use
+a symbol to represent the current directory.
+to the directory /home/jmsmith/work.
+to create a directory called "C" that is a child
+directory of directory "B", and also a directory "D"
+that is a child directory of directory "B":
+Good. The directory has been created
+Assume that you are still in your home directory.
+        - "D" which is a child directory of "a3"
+        - "E" which is a child directory of "D"
+              directory
+Assume that you are still in your home directory.
+        "file1" in directory "E":
+Assume that you are still in your home directory.
+        "file2" in directory "B":
+Assume that you are still in your home directory.
+directory "E" to directory "B" as "file2". Make
+Assume that you are still in your home directory.
+Issue a command to move the directory "E" and its
+contents to the directory "a2":
+Assume that you are still in your home directory.
+directory called "oop244" and it's child directory
+called "work" at the same time. Assume that directory
+"oop244" will branch-off your home directory. Use
+Enter the Linux command to view directory
+permissions of your current directory. Use
+a symbol to represent the current directory.
+to the directory /home/jmsmith/work.
+to create a directory called "C" that is a child
+directory of directory "B", And also a directory "D"
+that is a child directory of directory "B":
+Good. The directory has been created
+Assume that you are still in your home directory.
+        - "D" which is a child directory of "a3"
+        - "E" which is a child directory of "D"
+              directory
+Assume that you are still in your home directory.
+        "file1" in directory "E":
+Assume that you are still in your home directory.
+        "file2" in directory "B":
+Assume that you are still in your home directory.
+directory "E" to directory "B" as "file2". Make
+Assume that you are still in your home directory.
+Issue a command to move the directory "E" and its
+contents to the directory "a2":
+Assume that you are still in your home directory.
+directory called "oop244" and it's child directory
+called "work" at the same time. Assume that directory
+"oop244" will branch-off your home directory. Use
+Enter the Linux command to view directory
+permissions of your current directory. Use
+a symbol to represent the current directory.
+to the directory /home/jmsmith/work.
++
+
+cp out.2 data.txt
+
+cat > out.3 <<+
+### (file will be sent to a directory in Prof's directory ###
+### (file will be sent to a directory in Prof's directory ###
+your current directory.
+        - Character "d" indicates a directory
+The chmod command is used to change file and directory
+to changing file and directory access permissions provided
+directory and file access permissions.
+command to change to your home directory:
+working directory:
+          view the filenames in the directory
+          but you can't view the filenames in the directory.
+directory, you need to set "pass-through" permission
+within your home directory.
+A period "." represents the current directory. This symbol can help
+the user save time in changing permissions for the home directory.
+Assuming that you are in your home directory, you issue
+home directory by typing the command:
+directory is "ls -ld" comamnd.
+Issue the Linux command "ls -ld ." to view your home directory's
+Now, issue a Linux command to create a directory
+called "hands_off" in your current directory:
+Change the permissions for the "hands_off" directory
+Now issue a Linux command to confirm that the directory's
+Now, issue a command to change to the "hands_off" directory:
+friends logon to tux, change their directory to
+YOUR home directory, change to your directory
+in your "hands_off" directory. What happens?
+to your directory or file.
+home directory, as well as setting appropriate permission
+on a "test" directory to allow your friends access to sample
+        - "Pass-through" permission on your home directory
+        - Access permission on your sub-directory
+        - Access permission for files within your sub-directory
+directory, in case you are worried:
+First, change back to your home directory:
+directory's permissions have been modified:
+and directory permissions upon creation or if files
+The rules for default directory mask settings differ, and
+        file in the directory listing
+of disk space allocated with a user's home directory.
+home directory quota is around 5 MegaBytes (Mb). If you
+check the available storage space on your home directory
+up in your home directory by using the
+of your current directory (i.e. $PWD ) is being used.
+current directory ( i.e. "." ).
+directory.
+directory:
+working directory:
+your home directory:
+Assume that you are still in your home directory.
+to create a directory called "B" that is a child
+directory of directory "a1":
+Good. The directory has been created.
+to create a directory called "C" that is a child
+directory of directory "B", and also a directory "D"
+that is a child directory of directory "B":
+Good. The directory has been created
+Assume that you are still in your home directory.
+        - "D" which is a child directory of "a3"
+        - "E" which is a child directory of "D"
+              directory
+Assume that you are still in your home directory.
+        "file1" in directory "E":
+Assume that you are still in your home directory.
+        "file2" in directory "B":
+Assume that you are still in your home directory.
+directory "E" to directory "B" as "file2". Make
+Assume that you are still in your home directory.
+Issue a command to move the directory "E" and its
+contents to the directory "a2":
+Assume that you are still in your home directory.
+directory called "oop244" and it's child directory
+called "work" at the same time. Assume that directory
+"oop244" will branch-off your home directory. Use
+Enter the Linux command to view directory
+permissions of your current directory. Use
+a symbol to represent the current directory.
+to the directory /home/jmsmith/work.
+to create a directory called "C" that is a child
+directory of directory "B", and also a directory "D"
+that is a child directory of directory "B":
+Good. The directory has been created
+Assume that you are still in your home directory.
+        - "D" which is a child directory of "a3"
+        - "E" which is a child directory of "D"
+              directory
+Assume that you are still in your home directory.
+        "file1" in directory "E":
+Assume that you are still in your home directory.
+        "file2" in directory "B":
+Assume that you are still in your home directory.
+directory "E" to directory "B" as "file2". Make
+Assume that you are still in your home directory.
+Issue a command to move the directory "E" and its
+contents to the directory "a2":
+Assume that you are still in your home directory.
+directory called "oop244" and it's child directory
+called "work" at the same time. Assume that directory
+"oop244" will branch-off your home directory. Use
+Enter the Linux command to view directory
+permissions of your current directory. Use
+a symbol to represent the current directory.
+to the directory /home/jmsmith/work.
+to create a directory called "C" that is a child
+directory of directory "B", and also a directory "D"
+that is a child directory of directory "B":
+Good. The directory has been created
+Assume that you are still in your home directory.
+        - "D" which is a child directory of "a3"
+        - "E" which is a child directory of "D"
+              directory
+Assume that you are still in your home directory.
+        "file1" in directory "E":
+Assume that you are still in your home directory.
+        "file2" in directory "B":
+Assume that you are still in your home directory.
+directory "E" to directory "B" as "file2". Make
+Assume that you are still in your home directory.
+Issue a command to move the directory "E" and its
+contents to the directory "a2":
+Assume that you are still in your home directory.
+directory called "oop244" and it's child directory
+called "work" at the same time. Assume that directory
+"oop244" will branch-off your home directory. Use
+Enter the Linux command to view directory
+permissions of your current directory. Use
+a symbol to represent the current directory.
+to the directory /home/jmsmith/work.
++
+
+
+### Create and compile C program to test for CTRL keys pressed ###
+
+cat > $HOME/$$.c <<+
+
+/* C program created, compiled and run within lab1 online
+   tutorial to check if correct <CTRL> key is pressed. */
+
+
+#include <ncurses.h>
+#include <string.h>
+int main(int argc, char *argv[])
+{
+	int c, flag, value;
+
+	initscr();
+	noecho();
+	raw();
+	keypad(stdscr, 1);
+
+	if ( strcmp (argv[1],"19") == 0 )
+		value = 19;
+	if ( strcmp (argv[1],"17") == 0 )
+		value = 17;
+
+	if ( value == 19)
+	{
+		move (0,0);
+		printw ("<CTRL><s> - Locks the computer terminal's display");
+		move (2,0);
+		printw ("Press <CTRL><s> in the prompt below to");
+		move (3,0);
+		printw ("lock the terminal:");
+	}
+	else
+	{
+		move (0,0);
+		printw ("<CTRL><q> - Unlocks the computer terminal's display");
+		move (2,0);
+		printw ("Try entering some characters below.");
+		move (3,0);
+		printw ("When finished, press <CTRL><q> to unlock terminal");
+
+	}
+
+	move (6,30);
+	printw ("Enter text Here >> ");
+	move (6,49);
+
+	c = getch();		/* read character pressed */
+	
+	while ( c != value )
+	{
+		if ( value == 19 )
+		{
+			move (2,0);
+			printw ("INVALID KEY.\n");
+			move (3,0);
+			printw ("Hold down <CTRL> then press letter s\n");
+		}
+		
+		c = getch();
+	}
+			
+
+
+	if ( c == value )	/* test for ESC key pressed */
+		flag = 0;	/* true for UNIX operating system */
+	else		
+		flag = 1;	/* false for UNIX operating system */
+	endwin(); 
+	return flag;
+}
++
+
+cc $HOME/$$.c -o $HOME/$$ -lncurses 2> /dev/null
+
+
+
+### Function to "clean-up" if user presses ctrl-c  ##
+
+function exitScript() {
+
+  clear
+  cat <<+
+ATTENTION:
+
+You have pressed the key combination
+<CTRL><c> which has terminated this
+program.
+
+If you intend to re-run this program,
+you will have to re-run certain sections
+to get back to your area that you were
+studying...
+
++
+        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue to exit\e[m")" null
+
+	rm  out.[123] listing myfile yourfile thefile a? a?? a??? a???? 1* who_list output* testfile good error 2> /dev/null
+clear
+exit 1
+}
+
+trap exitScript 2    ### run above function if ctrl-c is pressed
+
+### Banner Advising User to Exit & Maximize SSH Window ###
+
+### Create Temporary Files ###
+
+
+clear
+cat <<+
+*********************************
+*                               *
+*  TELNET WINDOW SHOULD         *
+*  BE MAXIMIZED BEFORE USING    *
+*  THIS TUTORIAL.               *
+*                               *
+*  $(echo -e "\e[0;32mPRESS <CTRL><C> TO ABORT\e[m")     *
+*  $(echo -e "\e[0;32mPRESS <ENTER> TO CONTINUE\e[m")    *
+*                               *
+*********************************
+
++
+
+### pause for user to press ENTER to continue ###
+
+        echo -e "\e[0;32mPress <ENTER> to continue\e[m"
+					read null
+clear
+cat <<+
+*******************************************************************************
+*                                                                             *
+*        LINUX (INTRO / WORKING WITH FILES / REGULAR EXPRESSIONS)             *
+*                                                                             *
+*  These tutorials are designed to allow students to reinforce Linux          *
+*  concepts and practice Linux operating system commands.                     *
+*                                                                             *
+*  NOTE 1: This online tutorial is designed to be completed as an in-class    *
+*          exercise. If students cannot complete this online tutorial in      *
+*          regularly scheduled class-time, they have the flexibility to       *
+*          complete it during spare time at the college or at home.           *
+*                                                                             *
+*  NOTE 2: These labs are NOT to replace your professor's                     *
+*          notes or labs for your current Linux Course.                       *
+*                                                                             *
+* Author: Murray Saul  May, 2000   Revised for Loyalist College: March, 2024  *
+*                                                                             *
+*******************************************************************************
+
++
+
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+					read null
+
+
+### Banner (explanation of evaluation & feedback) ###
+
+clear
+cat <<+
+*****************************************************************************
+*                                                                           *
+*    ALL TUTORIALS HAVE THE FOLLOWING STRUCTURE:                            *
+*                                                                           *
+*    1. BASIC TUTORIAL        - Provides user to learn a skill              *
+*                                                                           *
+*    2. REVIEW TUTORIAL       - Reinforces learned skill with exercises     *
+*                                                                           * 
+*****************************************************************************
+
++
+
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+
+clear
+cat <<+
+*****************************************************************************
+*                                                                           * 
+*  TIPS FOR GETTING THE MOST OUT THIS TUTORIAL:                             *
+*                                                                           *
+*    - Perform all tutorials (menus & sub-menus) prior to performing        *
+*      the review questions.                                                *
+*                                                                           *
+*    - Students are required to take screen captures of successful          *
+*      tutorial completion and Review Questions completion. The student's   *
+*      username will appear in the screen capture lab assignment marks      *
+*                                                                           *
+*****************************************************************************
+
++
+
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+
+
+#### Prompt User for Menu Item ###
+
+until [ $num -eq 5 ] 2> /dev/null
+do
+	clear
+	cat <<+
+
+        MAIN MENU
+
+1. LINUX BASICS
+2. MANAGING DISK SPACE
+3. FILENAME EXPANSION / REGULAR EXPRESSIONS
+4. REVIEW QUESTIONS
+5. EXIT TUTORIAL
+
++
+
+### Error Checking ###
+
+        echo -e -n "\e[0;32mPlease Enter a Number >> \e[m"
+        read num
+
+	while [ $num -le 0 -o $num -ge 6 ] 2> /dev/null
+	do
+                printf "$(echo -e "\e[0;32mEnter a number 1 to 4 >> \e[m")"
+		read num
+	done
+
+  
+### Exit Process which prompts the User for Feedback ###
+### ALL feedback will be directed to Murray Saul     ###
+
+
+### Send output file to Appropriate Instructor ###
+
+        if [ "$num" -eq 5 ] 2> /dev/null
+                then
+				rm  out.[123] listing myfile yourfile thefile a? a?? a??? a???? 1* who_list output* testfile good error 2> /dev/null
+
+			clear
+			cat <<+	
+*****************************************************
+*                                                   *
+*            This concludes our Tutorial            *
+*                                                   *
+*  A file called "misc.ans" has been                *
+*  created for this tutorial in your home diretory  *
+*  for submission. Please do NOT remove this file   *
+*                                                   *
+*  Follow the instructions in lab assignment 8      *
+*  on how to transfer this file to your             *
+*  Host Computer so you can add it to your          * 
+*  zipped submission file.                          *
+*                                                   *
+*       Make certain to check your sample           *
+*       shell scripts that you created in           *
+*       your home directory...                      *
+*                                                   *
+*               Have a nice day :)                  *
+*                                                   *
+*****************************************************
+
++
+			exit 1
+	fi
+### Case Structure Displaying Tutorial Level ###
+
+	case $num in
+
+### Basic Linux Tutorial Submenu ###
+
+
+	1)
+			until [ "$snum" = "3" ] 2> /dev/null
+			do
+				clear
+	        	cat <<+
+    LINUX BASICS TUTORIAL MENU
+
+1.  INTRODUCTION LINUX
+    - Background Unix / Linux
+    - Purpose of LINUX Shell
+    - Issuing Commands at LINUX Shell Prompt 
+
+2.  BASIC LINUX COMMANDS
+    - Common Basic Linux Commands
+
+3.  RETURN TO MAIN MENU
+
++
+
+### Error Checking ###
+
+                printf "$(echo -e "\e[0;32mEnter a number 1 to 4 >> \e[m")"
+		read snum
+				while [ $snum -le 0 -o $snum -ge 4 ] 2> /dev/null
+				do
+					printf "Enter a number 1 to 3 >> "
+					read snum
+				done
+				case $snum in
+
+### BASIC SUBMENU 1 ###
+				1)
+					clear
+					cat <<+
+INTRODUCTION TO LINUX
+
+This tutorial will provide you with "hands-on" practice
+when working in the Linux environment.
+
+You are required to perform ALL tutorial sections in
+and review questions to obtain full marks for
+your lab assignment 9
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+					clear
+					cat <<+
+UNIX / LINUX OPERATING SYSTEMS
+
+All computer systems require an operating system
+to control the computer hardware, to schedule
+important routine tasks, and to allow the user
+to interact with the computer system.
+
+The UNIX & LINUX operating systems are well suited for
+students due to their many features:
+
+    · Accomodates multiple users
+    · Provides for user communication
+    · Allows for sharing of files
+    · Provides easy access to the Internet
+
+In fact, the UNIX and LINUX operating systems are
+quite similar to each other!
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+					clear
+					cat <<+
+SHELLS
+
+One method to communicate with the UNIX
+and LINUX operating systems is to enter
+commands (or program names) at a prompt or
+"shell".
+
+The shell is an interface between the UNIX/LINUX
+operating system and the user. When the
+shell is in operation, it provides a prompt
+and waits for the user to type in a command
+and press the ENTER key.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+					clear
+					cat <<+
+The shell will not run or "execute" a command
+that the user types until the ENTER key is pressed.
+
+This allows the user to edit or make
+corrections to their commands in case they
+make a mistake before they press ENTER.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+					clear
+					cat <<+
+You can backspace at the shell prompt
+by pressing one of these keys:
+
+     <BACKSPACE>
+or   <CTRL><BACKSPACE>
+or   <CTRL><h>
+
+Type the following text: "I made a mistike"
+
+
+If you notice strange characters such as "]"
+or "^H", simply try another key combination above!
+
++
+        echo -en "\e[0;32m\tType \"I made a mistike\" Here  >> \e[m"
+		    read null
+		    cat <<+
+
+It is recommended to memorize all key combinations
+
+<BACKSPACE>
+<CTRL><BACKSPACE>
+<CTRL><h>
+
+because different systems may vary on which
+of those key combination will work.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+		    clear
+		    cat <<+
+Here are some other useful shell editing keys:
+
+<CTRL><w> - Deletes a word
+
+Type the following text: "This is not bad!"
+and THEN press <CTRL><W> to see what happens. When
+you want to continue with this tutorial, press <ENTER>
+
++
+        echo -en "\e[0;32m\tType \"This is not bad!\" Here  >> \e[m"
+		    read null
+		    cat <<+
+
+<CTRL><u> - Deletes entire line
+
+Type the following text: "Oops! I messed up!"
+
+and THEN press <CTRL><U> to see what happens. When you want
+to continue with this tutorial, press <ENTER>
+
++
+        echo -en "\e[0;32m\tType \"Oops! I messed up!\" Here  >> \e[m"
+		    read null
+					clear
+					cat <<+
+Congratulations!
+
+You are now ready to learn some of the
+basic Linux operating system commands.
+
+This completes the topic INTRODUCTION TO LINUX 
+
++
+        echo -e "\e[0;32mPress <ENTER> to return to LINUX BASICS MENU\e[m"
+					read null
+;;
+
+### BASIC SUBMENU 2 ###
+
+2) 
+		printf "\n*** SIMPLE UNIX COMMANDS ***\n\n" >> $HOME/output.$$
+		clear
+			cat <<+
+SIMPLE LINUX COMMANDS
+
+Since this may be your first time using
+Unix or Linux, we will introduce you to
+a few simple operating system commands.
+
+The Unix and Linux operating systems are
+case-sensitive. This means that the operating
+systems treat (interpret) lowercase and uppercase
+differently from each other. Most Unix and Linux
+operating system commands are in lowercase.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+        read null
+		clear
+		cat <<+
+Let's demonstrate what happens if we enter a
+Unix or Linux command that is in uppercase.
+
+Issue the following command:
+
+        PWD
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "PWD" ]
+                		do
+                		    printf "\thint: PWD\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1 2> temp.$$
+				printf "bash"
+				cat temp.$$ | cut -c35- 
+				cat <<+
+
+
+You should notice an error message
+that appears above. This particular
+error message indicates that the shell
+(called "bash") cannot find the command
+called "PWD".
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+Try issuing the same command, but in lowercase
+
+eg.	pwd
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "pwd" ]
+                		do
+                		    printf "\thint: pwd\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+The text above indicates that you
+are in your home directory. This home
+directory, which is called "$(echo $HOME | cut -d "/" -f3)"
+is considered to be your personal storage
+space that allows you to store your own work.
+
+The text "home" indicates the directory
+that stores all students' home directories
+including yours - $(echo $HOME | cut -d "/" -f3). 
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+CHANGE DIRECTORY LOCATIONS
+
+You do not have to remain in your home
+directory all the time. You should be
+able to move to any directory that is
+contained within your home directory, or
+move to other users' directories
+(provided they have given you access).
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				cat <<+
+
+Before changing directories, let's see what
+contents are contained in your home directory by 
+issuing the command displayed below:
+
+	ls
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "ls" ]
+                		do
+                		    printf "\thint: ls\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+You should notice a listing of filenames
+displayed above. The ls command provides
+a compact listing of just the names of the files.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+In order to provide more information
+regarding each file contained in your
+home directory, issue the following command
+displayed below:
+
+	ls -l
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "ls -l" ]
+                		do
+                		    printf "\thint: ls -l\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+We will discuss next week more about the
+contents of this command, but you can see
+more information provided for each file.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+                		read null
+				clear
+				cat <<+
+CHANGING DIRECTORIES
+
+You may want to change to other user's
+directories (if you are permitted by
+the user) to view and later copy files.
+
+For example, let's change to the
+"bin" directory by issuing the following command:
+
+	cd /bin
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "cd /bin" ]
+                		do
+                		    printf "\thint: cd /bin\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+Now issue a command to verify that
+you changed to the "bin" directory
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "pwd" ]
+                		do
+                		    printf "\thint: pwd\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$ 2> /dev/null
+                		$com1_1
+				cat <<+
+
+Now issue a command to display the files
+that are contained in the "bin" directory.
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "ls" -o "$com1_1" = "ls -l" ]
+                		do
+                		    printf "\thint: ls or ls -l\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$ 2> /dev/null
+                		$com1_1
+				printf "\nPress <ENTER> to continue"
+				read null
+				clear
+				cat <<+
+RETURNING TO USER'S HOME DIRECTORY
+
+Let's now return to your home directory.
+
+Issue the following command:
+
+	cd
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "cd" ]
+                		do
+                		    printf "\thint: cd\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$ 2> /dev/null
+                		$com1_1
+				cat <<+
+
+Now issue a command to verify that you
+have changed back to your home directory.
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "pwd" ]
+                		do
+                		    printf "\thint: pwd\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+Very Good!
+
+We will be learning more about directories
+and how to copy files from one directory to
+another later in this course.
+
+We will now learn a few other simple but
+useful commands.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+DISPLAYING USER IDENTITY
+
+Enter the following command to display
+your username (handy if you forget who you are)
+
+	whoami
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "whoami" ]
+                		do
+                		    printf "\thint: whoami\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+The username for the owner of this
+account is displayed above.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+VIEW DATE AND TIME
+
+To display the current date and time,
+enter the following command:
+
+	date
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "date" ]
+                		do
+                		    printf "\thint: date\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+You should notice that the current date
+and time is displayed above. Note that the
+date displayed above represents the date
+on the server, and NOT the date on your PC
+in front of you.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+VIEWING A CALENDAR
+
+To display a calendar for the current month,
+enter the following command:
+
+	cal
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "cal" ]
+                		do
+                		    printf "\thint: cal\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+You should notice just the calendar for
+this current month - $(date +"%B").
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+VIEWING A CALENDAR
+
+To display an entire calendar for the year 2002,
+enter the following command:
+
+	cal 2002
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "cal 2002" ]
+                		do
+                		    printf "\thint: cal 2002\n"
+                		    printf "\t      A space between \"cal\" and \"2002\"\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				cat <<+
+
+You will notice all months appear for
+the year 2002. Unfortunately, all of the
+contents of the calendar may not appear on the
+terminal at the same time.
+
+You will learn later in this course to
+selectively move to all parts of the
+output.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+VIEWING A CALENDAR
+
+To display the calendar the month of August
+for the year 1963, enter the following command:
+
+	cal 08 1963
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+                		read com1_1
+                		until [ "$com1_1" = "cal 08 1963" -o "$com1_1" = "cal 8 1963" ]
+				do
+                		    printf "\thint: cal 08 1963\n"
+                		    printf "\tPLEASE TRY AGAIN   >> "
+                		    read com1_1
+                		done
+				printf "$com1_1\n" >> $HOME/output.$$
+                		$com1_1
+				printf "\nPress <ENTER> to continue"
+				read null
+				clear
+				cat <<+
+PASSWORDS
+
+It is important to protect your Linux
+server account from unauthorized
+access.
+
+CONSEQUENCES OF UNAUTHORIZED ACCESS
+
+- Loss of Data
+- Copy of Your Work
+- Suspension of Account to Illegal Activity
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+PASSWORD TIPS
+
+Avoid passwords that are words (contained in
+any language dictionary spelled forwards or
+backwards).
+
+Avoid passwords that consist only of a series
+of numbers.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+PASSWORD TIPS
+
+Creating Good Passwords:
+
+- Think of an easy-to-remember phrase consisting
+  of several words, and take the first letter
+  from each Word.
+
+e.g. Autumn Leaves Turn Red Yellow Orange
+
+	password: altryo
+
+- Capitalize the first and middle letter and
+  add some numbers and should include some
+  special character like -, _, .
+
+	better password AlT.ry0
+
+- If you forget your password, try to construct
+  it from the phrase and your modification rules.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+PASSWORD CHANGE
+
+On typical Unix or Linux systems, a user changes
+their password by entering the command:
+
+passwd
+
+When changing your password, you will be
+asked for the original password for verification.
+If you entered the original password correctly,
+You will be asked to enter the new password in
+twice.
+
+The new password may not be accepted if it does
+NOT contain a minimum number of characters, does
+not contain special characters, or is too similar
+to the original password.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+CHANGING YOUR PASSWORD
+
+To change your Linux password, you type
+the following Linux command:
+
+passwd
+
+You will be prompted for your previous password,
+and if successful, then enter a new password,
+and re-enter to confirm
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+				read null
+				clear
+				cat <<+
+Well Done!
+
+It is strongly recommended to practise these Linux commands
+on your own after you have completed this tutorial. In this way,
+you get used to using these Linux commands as a tool when you use
+this operating system.
+
++
+        echo -en "\e[0;32mPress <ENTER> to continue\e[m"
+read null
+clear
+cat <<+
+This completes the topic BASIC LINUX COMMANDS
+
++
+        echo -en "\e[0;32mPress <ENTER> to return to the LINUX BASICS TUTORIAL MENU\e[m"
+				read null
+				;;
+
+				esac
+				done
+				unset snum
+				;;
+
+	2)
+		until [ "$snum" = "3" ] 2> /dev/null
+		do
+			clear
+	       		cat <<+
+MANAGING DISK SPACE TUTORIAL MENU
+
+1. ANALYZING AVAILABLE DISK SPACE
+     - df, du
+     - Archiving files (tar, gzip, gunzip)
+
+2. FILE TRANSFERS (BETWEEN COMPUTER SYSTEMS)
+    - Purpose
+    - ftp, sftp, Graphical File Transfers
+
+3.  RETURN TO MAIN MENU
+
+
++
+
+### Error Checking ###
+
+                printf "$(echo -e "\e[0;32mEnter a number >> \e[m")"
+                read snum
+		while [ $snum -le 0 -o $snum -ge 4 ] 2> /dev/null
+		do
+                        printf "$(echo -e "\e[0;32mEnter a number 1 to 3 >> \e[m")"
+			read snum
+		done
+		case $snum in
+
+### BASIC SUBMENU 1 ###
+
+                1)
+                        clear
+                        cat <<+
+CHECKING FILE STORAGE
+
+Either a system administrator or an unpriviledged
+user can see how much disk space is available on
+their Unix or Linux system by using the 
+df (Disk Free) command.
+
+Issue the following command:
+
+	df -h | more
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "df -h | more" ]
+		do
+		    printf "\thint: df -h | more\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			df -h | more
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+A summary should be displayed for all major
+partitions on the system along with the amount
+of disk space used and available on the system.
+
+An administrator should periodically view this
+amount to ensure there is a proper amount of
+disk space available.
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+You can also check how much space is being used
+up in your home directory by using the
+du (disk usage) command.
+
+Type the following command displayed below:
+
+	du -h | more
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "du -h | more" ]
+		do
+		    printf "\thint: du -h | more\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			du -h | more
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+This command displays ALL files (both hidden and
+non-hidden) starting from your home directory.
+
+You may notice that the amounts are now
+summarized as Kb and Mb. 
+
+Also notice that at the bottom of the display is the
+total number of kilobytes used in your
+current directory ( i.e. "." ).
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+CONSERVING SPACE
+
+Let's assume that your system administrator
+has noticed that someone is using up a lot
+of disk space and that you are required
+to reduce or "conserve" space on your home
+directory.
+
+There are two major ways to acheive this goal:
+
+   1. Compress your files.
+
+   2. Transfer files to other server or medium (ftp or sftp)
+      and then remove the orginal files on your computer
+      account.
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+FILE COMPRESSION
+
+File compression reduces the size of a file
+in order to save space on a storage system.
+
+For example, many programs downloadable from the
+Internet are compressed files in order to save
+space on their web servers (limited space) and
+to reduce the amount of transfer time.
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+We will discuss one type of file compression
+technique:
+
+   Tape Archive File Compression (a.k.a. "Zipped Tarballs")
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+TARBALLS
+
+The tar utility stands for "tape archive" and
+was commonly used on older Unix systems to backup
+files on tape. Although new storage devices are
+available today, this utility is still used.
+
+When your first ran this online tutorial, the
+following files were created:
+
+	out.1
+	out.2
+	out.3
+
+We will use these files to demonstrate file compression
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+Let us first check these file sizes. Issue the
+following command:
+
+	ls -l out.*
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "ls -l out.*" ]
+		do
+		    printf "\thint: ls -l out.*\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+You should see the file sizes in the 5th
+column. Add up these file sizes before
+proceeding with this tutorial.
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+Now, let's archive these files to a "tarball"
+called "out.tz" by issuing the following command:
+
+	tar -cf out-files.tar out.*
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "tar -cf out-files.tar out.*" ]
+		do
+		    printf "\thint: tar -cf out-files.tar out.*\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+			cat <<+
+
+Now that you have "archived" these files,
+you can delete the original files. Issue
+the following command:
+
+	rm out.*
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "rm out.*" ]
+		do
+		    printf "\thint: rm out.*\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+Issue the following command to confirm that
+you deleted those files:
+
+	ls out.*
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "ls out.*" ]
+		do
+		    printf "\thint: ls out.*\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+You should get an error message indicating that
+those files do not exists (i.e. they were deleted)
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+ZIPPED TARBALLS
+
+To compress those "archived" files in order
+to save space, you can use the "zip" utility.
+
+Let's zip the tarball called "out.tz" to create
+a "zipped-tarball" that we will call "out.tz.gz".
+Issue the following command:
+
+	
+	gzip out-files.tar
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "gzip out-files.tar" ]
+		do
+		    printf "\thint: gzip out-files.tar\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+The tarball "out.tz" no longer exists but is replaced
+by the compressed file "out.tar.gz".
+
+Determine the file-type of "out-files.tar.gz" by issuing the
+following command:
+
+	file out-files.tar.gz
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "file out-files.tar.gz" ]
+		do
+		    printf "\thint: file out-files.tar.gz\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+
+Now determine the total size of the file "out.tar.gz"
+by issuing the following command:
+
+	ls -l out-files.tar.gz
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "ls -l out-files.tar.gz" ]
+		do
+		    printf "\thint: ls -l out-files.tar.gz\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+You should notice that the size of this "compressed"
+file is smaller than the sum of the original 3 files
+(which was 12,557 bytes if you didn't do the math >:p )
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+RESTORING A "ZIPPED" TARBALL
+
+Usually, you obtain "zipped tarballs" from
+CDs, copy them from other directory paths
+on your system, or download them from the Internet.
+
+You generally follow the same procedure as before,
+but in the reverse order and using Unix commands.
+
+1. Unzip to create "tarball"
+2. Decompress "tarball" to obtain original files
+
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+To Unzip, you use the "gunzip" utility. To obtain the
+"tarball", issue the following command:
+
+	gunzip out-files.tar.gz
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "gunzip out-files.tar.gz" ]
+		do
+		    printf "\thint: gunzip out-files.tar.gz\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+This recovers (unzips) the original "tarball" called
+out.tz
+
+Now, to obtain the orginal files (out.1, out.2, out.3), issue
+the following command:
+
+	tar -xvf out-files.tar
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "tar -xvf out-files.tar" ]
+		do
+		    printf "\thint: tar -xvf out-files.tar\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+The file "out.tar" should now be replaced with the
+original files. Issue the following command to verify:
+
+	ls -l out.*
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+		until [ "$com1_1" = "ls -l out.*" ]
+		do
+		    printf "\thint: ls -l out.*\n"
+		    printf "\tPLEASE TRY AGAIN   >> "
+				read com1_1
+		done
+			$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+			cat <<+
+
+The files should appear.
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+Although there are more "user-friendly" methods to
+install Linux/Unix applications, "Zipped Tarballs" are
+also existing methods to install applications as a "last resort".
+
+In order to install applications, you simply follow
+the same procedure as above to unzip file to obtain
+the tarball, and then decompress the tarball to obtain
+a directory structure containing files.
+
+Usually there is a "README" file that provides information
+for the installation process (usually compiling a c, or c++ program).
+
++
+                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+		clear
+		cat <<+
+This completes the topic ANALYZING DISK SPACE
+
+Please proceed with FILE TRANSSFERS
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to return to the MANAGING DISK SPACE TUTORIAL MENU\e[m")" null
+                ;;
+                2)
+                        clear
+                        cat <<+
+FILE TRANSFERS
+
+Another method of managing file space is to simply
+"backup" your files from your Atlas computer system
+to another computer system (like your notebook computer,
+a USB device or a CD/DVD).
+
+After the file has been transferred or "backed-up",
+then the file on your Atlas computer account can be
+removed to conserve space.
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+There are 2 types of commands in Linux/Unix that allow
+the user to perform file transfers:
+
+     ftp
+     sftp
+
+The term "ftp" stands for "File Transfer Protocol" which
+refers to a set of rules to allow files to be transferred
+properly between different computer systems (like MS Windows to Linux,
+Mac OSX to MS Windows, Mac OSX to Linux, Linux to MS Windows, etc).
+
+You can perform a NetSearch on "ftp" or "sftp" on how to use these
+commands.
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+The "ftp" command is very old, and is NOT a secure method
+of transferring files between computer systems over the Internet.
+
+The "sftp" command is a newer and more secure method of
+transferring files between computer systems. It appears
+that the Atlas computer system allows the older "ftp"
+command to be used, but this may change in the future
+as IT system administrators are constantly looking at
+methods to make their computer systems more secure.
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+There are many applications that are available in order
+for you to perform a File Transfer.
+
+For example, the SSHSecureSHellClient, and Putty applications that you may have
+downloaded and installed on your notebook computer system,
+can allow the user to graphically transfer files between
+your Atlas computer account and your notebook computer.
+
+We will only discuss how to use the SSHSecureShellClient application
+how to transfer files between computer systems. Users of Putty
+can access online documentation of how to perform Putty file
+transfers via the Internet.
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+USE SSH SECURE SHELL CLIENT FILE TRANSFER
+
+To transfer files between your Atlas account and your
+notebook computer using the SSH SECURE SHELL CLIENT
+application, simply log into your Atlas account,
+and then click the "Window" menu, and select "New File Transfer".
+
+Another window will appear displaying your Atlas home directory
+and your Computer system. To transfer a file, simply click and
+drag the file icon from one computer system to the other. 
+
+You can select multiple files to transfer by using the
+SHIFT-click or CTRL-click methods, then drag the selected
+files from one computer system to the other.
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+This completes the topic FILE TRANSFERS
+
+Please return to the MAIN MENU and proceed with FILENAME EXPANSION / REGULAR EXPRESSIONS TUTORIAL
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to return to the MANAGING DISK SPACE TUTORIAL MENU\e[m")" null
+                ;;
+		esac
+		done
+		unset snum
+	;;
+
+       3)
+		until [ "$snum" = "3" ] 2> /dev/null
+		do
+			clear
+	       		cat <<+
+FILENAME EXPANSION / REGULAR EXPRESSIONS TUTORIAL MENU
+
+1.  FILE NAME EXPANSION (FNE)
+    - *, ?, [..], [!..]
+
+2. REGULAR EXPRESSIONS
+    - Simple Regular Expressions
+    - Complex Regular Expressions
+    - Extended Regular Expressions
+
+3.  RETURN TO MAIN MENU
+
+
++
+
+### Error Checking ###
+
+                read -p "$(echo -e "\e[0;32mPlease Enter a Number >> \e[m")" snum
+		while [ $snum -le 0 -o $snum -ge 4 ] 2> /dev/null
+		do
+                        printf "$(echo -e "\e[0;32mEnter a number 1 to 3 >> \e[m")"
+			read snum
+		done
+		case $snum in
+
+### BASIC SUBMENU 1 ###
+
+                1)
+                        clear
+                        cat <<+
+FILE NAME EXPANSION (FNE)
+
+In Unix and Linux, the shell is designed
+to recognize certain "special characters"
+and take action prior to the execution of
+a command.
+
+A collection of these "special characters"
+can be used in arguments for file management
+commands (eg. ls, cp, mv, rm, cat, more, chmod, etc.)
+include:
+
+*, ?, [ ], and [! ].
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+                        clear
+                        cat <<+
+When file management commands are issued with
+these special symbols in file pathnames, the
+shell replaces that pathname and symbols
+with files that match those special symbols!
+
+This process is often referred to as "GLOBBING"...
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Here is a Demonstration:
+
+Assume that the regular files a, b, 11, and 123
+are the only files contained in your current
+directory.
+
+Let's also assume we just issued the command
+(while in that directory):
+
+ls *
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Demonstration / Continued...
+
+The shell would first notice the * symbol which
+means to match zero or any number of characters
+(like letters, numbers, special characters, etc..)
+
+The shell then, would look for file names in that
+current directory for files that match that
+"search pattern".
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Demonstration / Continued...
+
+Therefore, the shell will notice that the files
+a, b, 11, and 123 match that "search pattern" *.
+Remember, that * mean zero or any number of characters:
+therefore, all filenames are matched...
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Demonstration / Continued...
+
+Now here comes the neat part...
+
+Although we don't see it happen, the shell is
+designed (I guess behind the scenes) to replace
+the * symbol, with the actual file pathnames
+that are matched.
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Demonstration / Continued...
+
+In other words, it would issue the command:
+
+ls a b 11 123
+
+Although we don't see that actually happen -
+we only see the results of that command.
+For example
+
+a   b   11   123
+
++
+ read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Demonstration / Continued...
+
+It appears that the shell replaces or "expands" the *
+symbol with the actual file names. This is why
+we call this process "FILE NAME EXPANSION".
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Now that we have given you a background
+on File Name Expansion (FNE for short),
+Let's discuss these "special symbols"
+in more detail...
+
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+The most common "wildcard" symbol is the asterisk "*".
+This symbol is used to match any number of characters.
+before, inbetween or after a character or groups of
+characters which provides the pattern
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat<<+
+In order to demonstrate the use of "wildcard" characters,
+the following files are contained in your current directory
+
++
+
+touch a1 a11 a125 a1234 a23 a22 a3 1 11 123
+
+				$com1_1
+touch a1 a11 a125 a1234 a23 a22 a3 1 11 123  >> ~/archiving-fne-regexps.com
+ls
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				cat <<+				
+clear
+Issue a command to provide a compact listing of
+all files that begin with the letter "a"
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "lsa*" ] 2> /dev/null
+
+				do
+					printf "\thint: ls a*\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+Issue the command to provide a compact listing 
+of all files in the current directory that end
+with the number 1:
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls*1" ]  2> /dev/null
+				do
+					printf "\thint: ls *1\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+
+Now, issue a command to provide a compact listing
+of files in your current directory that begin
+with "a" and end with "3"
+
++
+        echo -en "\e[0;32m\tENTER COMMAND HERE  >> \e[m"
+        read com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "lsa*3" ] 2> /dev/null
+
+				do
+					printf "\thint: ls a*3\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+The question mark "?" symbol is used to match
+only one particular character, but that single character
+can represent any characters (letter, number, special character).
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				ls a1 a11 a123 a1234 a23 a22 1 11 123
+				cat <<+
+
+The files that you created are displayed
+above. To demonstrate, the difference between
+"*" and "?" used as wildcards, issue the following
+Linux command: ls a?3
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "lsa?3" ] 2> /dev/null
+
+				do
+					printf "\thint: ls a?3\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+				cat <<+
+
+Now issue the following Linux command: ls a*3
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "lsa*3" ] 2> /dev/null
+
+				do
+					printf "\thint: ls a*3\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+				cat <<+
+
+Notice that using the "*" symbol matches zero or
+more of any type of characters, as opposed to matching
+only one character with the "?" symbol.
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				ls
+				cat <<+
+
+The files contained in your current directory
+are displayed above.
+
+You can also use "?" symbol to match more than
+one character.
+
+For example, issue the following Linux command: ls a???3
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "lsa???3" ] 2> /dev/null
+
+				do
+					printf "\thint: ls a???3\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+Another useful matching tool is character class: [ ]
+
+Character class behaves similar to the "?" wildcard,
+except that you can indicate what that character represents
+(eg. letter, number, special character).
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				ls a1 a11 a123 a1234 a23 a22 1 11 123
+				cat <<+
+
+The files that you created are displayed
+above.
+
+
+First, let's provide a compact listing for files
+that begin with either the lowercase letter "a"
+(case sensitivity matters) or begins with the
+number "1"
+
+Issue the following Linux command: ls [a1]*
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls[a1]*" ] 2> /dev/null
+
+				do
+					printf "\thint: ls [a1]*\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+				cat <<+
+
+Good.
+
+Now let's provide a compact listing for files
+that end with an odd number (1,3,5,7,9)
+
+Issue the following Linux command: ls *[13579]
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls*[13579]" ] 2> /dev/null
+
+				do
+					printf "\thint: ls *[13579]\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+				cat <<+
+
+Now try issuing the following Linux command: ls [ab]*
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls[ab]*" ] 2> /dev/null
+
+				do
+					printf "\thint: ls [ab]*\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+In order to save time, you can use the dash "-"
+symbol to specify a range of letters or numbers
+which belong to the character class.
+
+For example:
+
+[a-z]	 Single character can be a lowercase letter
+
+[A-Z]	 Single character can be an uppercase letter
+
+[a-zA-Z] Single character can be any type of letter
+
+[0-9]	 Single character can be any digit (from 0 to 9).
+
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				ls a1 a11 a123 a1234 a23 a22 1 11 123
+				cat <<+
+
+The files that you created are displayed
+above.
+
+
+To list all files that begin with a letter
+(whether upper or lowercase),
+
+issue the following Linux command: ls [a-zA-Z]*
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls[a-zA-Z]*" ] 2> /dev/null
+
+				do
+					printf "\thint: ls [a-zA-Z]*\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+Now issue a Linux command that will display
+a compact listing for all files that begin
+and end with a number.
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls[0-9]*[0-9]" ] 2> /dev/null
+
+				do
+					printf "\thint: ls [0-9]*[0-9]\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				cat <<+
+You can also search for filenames that
+DO NOT match a character class!
+
+You place an exclaimation mark "!" after
+the first open square bracket before stating
+character class for file not to contain.
+
+Examples
+
+[!0-9]	  Not containing numbers
+
+[!13579]  Not containing numbers 1, 3, 5, 7, 9
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+				clear
+				ls a1 a11 a123 a1234 a23 a22 1 11 123
+				cat <<+
+
+The files that you created are displayed
+above.
+
+Now let's provide a compact listing for files
+that do NOT begin with the lowercase letter "a"
+
+Issue the following Linux command: ls [!a]*
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls[!a]*" ] 2> /dev/null
+
+				do
+					printf "\thint: ls [!a]*\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+Now issue a Linux command to provide a compact
+listing of all files that begin with a character
+that is NOT a letter, and ends with a character that
+is NOT a letter.
+
++
+                                read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+				until [ "`echo "$com1_1" | sed 's/ //g' | sed 's/	//g'`" = "ls[!a-zA-Z]*[!a-zA-Z]" ] 2> /dev/null
+
+				do
+					printf "\thint: ls [!a-zA-Z]*[!a-zA-Z]\n"
+					printf "\tPLEASE TRY AGAIN   >> "
+					read com1_1
+				done
+				$com1_1
+                                echo "$com1_1" >> ~/archiving-fne-regexps.com
+                                echo
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+			cat <<+
+This completes the topic FILE NAME EXPANSION
+
+Please proceed with REGULAR EXPRESSIONS
+
++
+                                read -p "$(echo -e "\e[0;32mPress <ENTER> to return to the FILENAME EXPANSION / REGULAR EXPRESSIONS MENU\e[m")" null
+                ;;
+		2)
+                        clear
+                        cat <<+
+SIMPLE REGULAR EXPRESSIONS
+
+A Regular Expression is a "language construct"
+that is used to search for matching strings & patterns.
+
+Regular Expressions allow the user to search
+for simple text strings or ambiguous patterns
+using wildcards.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+NOTE: REGULAR EXPRESSIONS are NOT to be confused
+      with FILENAME EXPANSION. Regular expressions
+      are used to match strings of text (contained
+      in files, or sent down a pipe "|"), as opposed
+      to filename expansion which is used to match
+      filenames when working with file management
+      commands...
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Regular Expressions are used in many programming
+languages (such as Java, C, C++, Perl, JavaScript,
+Shell Scripting, etc), and is considered an
+essential tool for Linux and Unix administrators.
+
+You will learn that Linux (Unix) utilities such as
+grep, vi, sed, awk, man, more, and less can
+use regular expressions.
+
+We will explore the use of regular expressions involving
+the sed and awk utilites in more detail in a later tutorial.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Simple Regular Expressions are strings of
+text that don't contain any special (wildcard)
+characters.
+
+We will now demonstrate the use of simple regular
+expressions using the grep utility.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+The "grep" command can be used to display lines
+of strings (contained in text files) that match
+a pattern.
+
+eg.	grep "pattern" file
+
+
+The grep command can also be used to modify
+standard output from other commands
+with the use of the pipe-to symbol "|"
+
+eg.	who | grep userid
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+The grep utility reads each line from a file
+and only displays as standard output lines that
+match the pattern.
+
+In addition, the entire line is displayed as
+opposed to just the pattern itself.
+
+To demonstrate this, enter the following command:
+
+	grep "the" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+	                    		until [ "$com1_1" = "grep \"the\" data.txt" ]
+		                    	do
+                       				printf "\thint: grep \"the\" data.txt\n"
+                       				printf "\tPLEASE TRY AGAIN   >> "
+                       				read com1_1
+					done
+					grep "the" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+The lines displayed above should contain
+at least one occurance of the PATTERN "the".
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+The only character that is not recognized as a
+regular expression is the new line character.
+
+If you notice a line that does NOT match a pattern,
+perhaps the line has "wrapped around" to the next
+line until the "new line" character appears.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+		
+Let's try searching for lines with another
+pattern.
+
+Enter the following command below:
+
+	grep "and" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep \"and\" data.txt" ]
+                    			do
+                       				printf "\thint: grep \"and\" data.txt\n"
+                       				printf "\tPLEASE TRY AGAIN   >> "
+                       				read com1_1
+					done
+					grep "and" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+You should notice that all lines contained in
+the file "data.txt" containing the pattern "and"
+were displayed.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Now enter the same command, but for "And"
+(with a capital A - see below)
+
+grep "And" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep \"And\" data.txt" ]
+                    			do
+                       				printf "\thint: grep \"And\" data.txt\n"
+                       				printf "\tPLEASE TRY AGAIN   >> "
+                       				read com1_1
+					done
+					grep "And" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+The standard output of this command should differ
+from the standard output of the previous command: 
+therefore, you have to be careful with case sensitivity.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+You can avoid the case sensitivity problem by using the -i
+(ignore case sensitivity) option with the grep command.
+
+Enter the following command below:
+
+	grep -i "And" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -i \"And\" data.txt" ]
+                    			do
+                    				printf "\thint: grep -i \"And\" data.txt\n"
+                        			printf "\tPLEASE TRY AGAIN   >> "
+                        			read com1_1
+					done
+					grep -i "And" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+You should now see all the occurences of lines
+containing expressions (regardless of case)
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Another useful option with the grep utility is
+-v which displays all lines that do not contain
+the occurance of the pattern (i.e. the opposite)
+
+For example, enter the following command below:
+
+	grep -vi "and" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -vi \"and\" data.txt" ]
+                    			do
+                    				printf "\thint: grep -vi \"and\" data.txt\n"
+                       				printf "\tPLEASE TRY AGAIN   >> "
+                       				read com1_1
+					done
+					grep -vi "expression" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+The following standard output displayed
+did NOT contain the pattern "expression"
+(regardless of case)
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Finally, the -c option for the grep utility provides
+a count of number of matching lines within a file.
+
+Enter the following command below:
+
+	grep -ic "and" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -ic \"and\" data.txt" ]
+                    			do
+                       				printf "\thint: grep -ic \"and\" data.txt\n"
+                       				printf "\tPLEASE TRY AGAIN   >> "
+                       				read com1_1
+					done
+					grep -ic "and" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Good.
+
+Please note that if you want to count the
+number of non-matching lines, you must use
+
+	grep -vc "pattern" filename
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Let's now use the grep utility as a filter.
+
+Issue the following command below:
+
+	sort data.txt | grep -i "regular" | more
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "sort data.txt | grep -i \"regular\" | more" ]
+                    			do
+                    				printf "\thint: sort data.txt | grep -i \"regular\" | more\n"
+                    				printf "\tPLEASE TRY AGAIN   >> "
+                        			read com1_1
+					done
+					sort data.txt | grep -i "regular" | more
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+                                        cat <<+
+COMPLEX REGULAR EXPRESSIONS
+
+In the previous section, we only used grep
+for simple regular expressions that matched
+a specific string of text.
+
+What if we wanted to match lines that matched
+an "ambiguous" pattern (such as all lines that
+begin with a number)?
+
+Complex regular expressions allow us to use
+special characters to accomplish this task
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+             <<< WARNING >>>
+
+Although some of the special characters
+to search for ambigious regular expressions
+are similar to wildcard searches for files,
+many symbols are different, and results may be
+different than what students expect!
+
+Proceed slowly and please note the differences.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+MATCHING PATTERNS AT BEGINNING OF LINE
+
+The caret ^ symbol is used to force a match at
+the beginning of the line.
+
+The caret symbol also has a different meaning
+when used within a character class (ie [^t ] ),
+but we will discuss this later in this section.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Let's use the grep utility to provide a sorted list
+of all lines in this script (data.txt) that begin with
+lower or upper case T.
+
+Enter the following command below:
+
+	sort data.txt | grep -i "^t"
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "sort data.txt | grep -i \"^t\"" ]
+                    			do
+                           			printf "\thint: sort data.txt | grep -i \"^t\"\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					sort data.txt | grep -i "^t"
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+All lines displayed should all begin with
+a "t" or "T".
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Now, we will modify the previous command to
+match lines that begin with "the"
+(ignore case sensitivity).
+
+Issue the modified command displayed below:
+
+	sort data.txt | grep -i "^the"
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "sort data.txt | grep -i \"^the\"" ]
+                    			do
+                           			printf "\thint: sort data.txt | grep -i \"^the\"\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					sort data.txt | grep -i "^the"
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+Notice that lines that begin with "the", "The"
+or "THE" are displayed.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+MATCHING PATTERNS AT END OF LINE
+
+Likewise, we use the dollar sign $ symbol to force
+a match at the end of the line.
+
+Please note that the character or characters must
+appear before the dollar sign symbol.
+
+Issue the following command displayed below:
+
+	sort data.txt | grep -i "d$"
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "sort data.txt | grep -i \"d$\"" ]
+                    			do
+                           			printf "\thint: sort data.txt | grep -i \"d$\"\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					sort data.txt | grep -i "d$"
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Good.
+
+Now issue the command displayed below to
+match all lines that end with "ard" :
+
+	sort data.txt | grep -i "ard$"
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "sort data.txt | grep -i \"ard$\"" ]
+                    			do
+                           			printf "\thint: sort data.txt | grep -i \"ard$\"\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					sort data.txt | grep -i "ard$"
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+USING WILDCARD CHARACTERS
+
+Wildcard symbols can be used to match one
+character, zero or more characters, or a 
+character class.
+
+It is important to note the differences in
+syntax as compared to wildcard symbols learned
+previously in "ambiguous file reference"
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+A period "." is used to represent any character
+when using regular expressions (note that this is
+similar to the question mark "?" in ambiguous file
+reference)
+
+Issue the following command displayed below:
+
+	grep -i "ab.c" data.txt
+
++
+
+# Example of another string containing abxc
+
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -i \"ab.c\" data.txt" ]
+                    			do
+                           			printf "\thint: grep -i \"ab.c\" data.txt\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					grep -i "ab.c" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+Note that lines displayed above should contain
+text combinations "ab.c", "ab c" or "abxc"
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+An asterisk "*", on the other hand, is used
+to match ZERO or MORE occurences of a match OF
+THE PRECEEDING CHARACTER.
+
+In other words, the search could match a line
+that DOES NOT INCLUDE the character appearing
+BEFORE the asterisk!
+
+Issue the following command below:
+
+	grep -i "c*x" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -i \"c*x\" data.txt" ]
+                    			do
+                           			printf "\thint: grep -i \"c*x\" data.txt\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					grep -i "c*x" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+Notice that all lines displayed contain text
+that EITHER begins with "c" or "C" and ends with
+"x" or "X", or DOES NOT BEGIN with "c" or "C" but
+still ends with an "x" or "X". 
+
+THIS TENDS TO CAUSE CONFUSION FOR STUDENTS
+USING THE "*" WILDCARD WITH REGULAR EXPRESSIONS!
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+In order to avoid confusion for wildcard
+searches, the period "." immediately followed
+by an asterisk "*" provides standard output
+consistent with using "*" with ambigous file
+reference.
+
+To demonstrate, enter the following command below:
+
+	grep -i "c.*x" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -i \"c.*x\" data.txt" ]
+                    			do
+                           			printf "\thint: grep -i \"c.*x\" data.txt\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					grep -i "c.*x" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+This should display all lines that begin
+with "c" or "C" and end with "x" or "X"
+
+No lines should display with text JUST ENDING
+WITH "x" or "X" as displayed in the previous
+example!
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+The character class symbol [] is used to
+define a certain class of a matching character.
+
+Enter the command displayed below to display
+all lines in file data.txt that begin with upper
+case letters:
+
+	grep "^[A-Z]" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep \"^[A-Z]\" data.txt" ]
+                    			do
+                           			printf "\thint: grep \"^[A-Z]\" data.txt\n"
+                           			printf "\tPLEASE TRY AGAIN   >> "
+                           			read com1_1
+					done
+					grep "^[A-Z]" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+You should see lines displayed which
+begin with a capital letter.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+MATCHING SPECIAL CHARACTERS
+ 
+As you would expect, you need to quote or
+"turn-off" the shell's interpretation of
+certain special characters if you are using
+regular expressions
+ 
+The symbol that you use is backslash \ and
+as you recall, you must place this symbol before
+each occurance of the special character.
+ 
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+                    			clear
+                    			cat <<+
+Issue the command displayed below to display
+all lines in file data.txt with contain an asterisk "*":
+ 
+        grep -i "\*" data.txt
+ 
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			grep -i "\*" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+                    			cat <<+
+
+You see lines displayed that contain at
+least one asterisk "*"
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+ 
+Now, issue the command displayed below to
+list all lines in file data.txt that begin with
+a double quote " :
+ 
+        grep -i "^\"" data.txt
+ 
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "grep -i \"^\"\" data.txt" ]
+                    			do
+                            			printf "\thint: grep -i \"^\\\"\" data.txt\n"
+                            			printf "\tPLEASE TRY AGAIN   >> "
+                            			read com1_1
+                    			done
+                    			grep -i "^\"" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+                    			clear   
+					cat <<+
+MATCHING EXACT WORDS
+
+You can display content from files that
+match words (not just patterns of text
+that are embedded in other words)
+
+SYMBOLS
+
+\<    - Used to match a beginning of a word
+\>    - Used to match an end of a word
+
+These symbols can be used together to force
+a match for delimited words (text separated
+by a space - a word)
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Let's display all lines that contain the
+word "feedback".
+
+Enter the command displayed below:
+
+	grep -i "\<feedbacking\>" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			grep -i "\<feedbacking\>" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+There is one occurence of work "feedbacking"
+in this script.
+
+Note that using grep for this type of search
+may not work in Phobos.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+ 
+There are two types of characters that CANNOT
+be quoted using \ to represent itself: parenthesis
+(brackets) and digits (numbers)
+
+If you are using "Extended" or "Full" Regular
+expressions, you do not have to quote the
+parenthesis (brackets). We will discuss
+Extended or Full Regular Expressions in the
+next section.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+                                        cat <<+
+EXTENDED REGULAR EXPRESSIONS
+
+There are additional searching symbols that
+are grouped into a category called
+"Extended regular expressions" or
+"Full regular expressions"
+
+Extended or Full Regular expressions can provide
+similar search tools, except that different
+symbols may be used, and parenthesis does NOT
+have to be quoted with a backslash "\" symbol.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+In order to take advantage of these
+"extended regular expressions", the grep
+command must use the option -E
+
+For example:
+		
+		grep -E "pattern" file
+or
+		grep -iE "pattern" file
+
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+There are commands that have been created that include
+extended regular expressions by default.
+
+One such command is called "egrep".
+
+This command is available on most Unix / Linux servers
+and is considered a suitable replacement for the
+"grep" command.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+Here are some of the symbols and their purpose
+when using Extended Regular Expressions:
+
+The question mark "?" symbol is used to match
+ZERO OR ONE occurence.
+
+To demonstrate, enter the command displayed below:
+
+	egrep "(ab)?c" data.txt
+
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "egrep \"(ab)?c\" data.txt" ]
+                    			do
+                            			printf "\thint: egrep \"(ab)?c\" data.txt\n"
+                            			printf "\tPLEASE TRY AGAIN   >> "
+                            			read com1_1
+                    			done
+                    			egrep "(ab)?c" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					cat <<+
+
+It looks like it didn't work, but it did!
+
+In this case, the question mark matched ONE
+occurance of "ab" as well as NO OCCURANCE OF "ab",
+thus any line with just "c" will be displayed
+as well!
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+The asterisk "*" is used to match zero or more
+occurances.
+
+Remember, that could include or exclude the
+character or group of characters within brackets
+before "*". This again can be confusing for
+students.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+The plus sign "+" is used to match ONE OR MORE
+OCCURENCES of the charcters before this symbol.
+
++
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+					clear
+					cat <<+
+USING COMPOUND STATEMENTS
+ 
+The pipe "|" symbol is used to represent the
+"or" condition.
+ 
+For example, issue the command displayed below:
+
+	egrep "data.txt|lab9" data.txt
+ 
++
+                                        read -p "$(echo -e "\e[0;32m\tENTER COMMAND HERE >>\e[m")" com1_1
+                    			until [ "$com1_1" = "egrep \"data.txt|lab9\" data.txt" ]
+                    			do
+                            			printf "\thint: egrep \"data.txt|lab9\" data.txt\n"
+                            			printf "\tPLEASE TRY AGAIN   >> "
+                            			read com1_1
+                    			done
+                    			egrep "data.txt|lab9" data.txt
+                                echo "$com1_1" >> ~/archiving-fne-regexps.ans
+                                        echo
+                                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+                    			clear 
+					cat <<+
+Good.
+ 
+Please note that ampersand "&" does NOT
+represent the "and" condition. Instead
+& represents the matched string, and is
+very useful for operations such as search
+and replace in the vi editor.
+ 
++
+                        read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+ mail -n -s "Tutorial 7 - Completed" saulm@sheridanc.on.ca < ~saulm/syst13416/tutorials/message.txt
+			clear
+			cat <<+
+This completes the topic REGULAR EXPRESSIONS
+
+Please proceed with REVIEW QUESTIONS
+
+Press <ENTER> to return to the FILENAME EXPANSION / REGULAR EXPRESSIONS TUTORIAL MENU
++
+			read null
+                ;;
+		esac
+		done
+		unset snum
+	;;
+
+
+
+
+### Intermediate Tutorial Level ###
+
+4)
+                clear
+                cat <<+
+REVIEW QUESTIONS
+
+The purpose of this section is to reinforce your skills with
+issuing LINUX commands covered in the previous section.
+
++
+read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+			clear
+                        cat <<+
+A file with review questions called "$(echo -e "\e[0;32misc.ans\e[m")" has been
+created in your directory pathname ~/syst13416.
+
++
+read -p "$(echo -e "\e[0;32mPress <ENTER> to continue\e[m")" null
+                clear
+                cat <<+
+Please select a number for
+the text editor you wish to edit "misc.ans":
+
+1. vi 
+2. nano
+3. pico
+
++
+
+                read -p "$(echo -e "\e[0;32mPlease Enter a Number >> \e[m")" editor
+		while [ $editor -le 0 -o $editor -gt 3 ] 2> /dev/null
+		do
+			printf "$(echo -e "\e[0;32mEnter a number 1 to 3 >> \e[m")"
+			read editor
+		done
+
+                case $editor in
+                 1) editing=vi ;;
+                 2) editing=nano ;;
+                 3) editing=pico ;;
+                esac
+
+                clear
+                cat <<+
+Shortly, an easy-to-use text editor called
+"$editing" will launch, and will load that file for you to answer
+some review questions.
+
+Make certain to save your editing changes. If you wish to make any editing
+changes at a later date, simply issue the command:
+
+$(echo -e "\e[0;32m${editing} ~/misc.ans\e[m")
+
+Your instructor will take up this review at the beginning of the
+next class...
+
++
+read -p "$(echo -e "\e[0;32mPress <ENTER> to proceed with this review...\e[m")" null
+
+choice="y"
+
+if [ -f ~/misc.ans ]
+then
+   clear
+cat <<+
+$(echo -e "\e[0;31mWARNING:\e[m")
+
+A file in your home directory called $(echo -e "\e[0;32m~/misc.ans\e[m")
+already exists. You may NOT want to create this review tutorial
+template since it would ERASE your previous editing session.
+
++
+read -p "$(echo -e "\e[0;32mDo you want to overwrite this file? (y|n): \e[m")" choice
+
+fi
+
+if [ "$choice" = "y" ]
+then
+                clear
+
+
+cat > ~/misc.ans <<+
+
+Exercise: Fill in the following questions.
+
+          The answers for this exercise will be discussed at the beginning
+          of the next class.
+
+
+PART A : MANAGING FILES
+Fill in the blanks with the appropriate answer.
+
+1. List two methods to help prevent "running out of disk space"
+   on your Linux file system.
+
+   ________________________________________________
+
+   ________________________________________________
+
+2. Write the Linux commands to create a "zipped-tarball" called
+   "files.tar.gz" that combine all of the files in your current
+   dirctory.
+
+   ___________________________________________________________
+
+   ___________________________________________________________
+
+
+3. Write the Linux commands to unpack or decompress the zipped tarball
+   in your current directory called "myfiles.tar.gz"
+
+   ___________________________________________________________
+
+   ___________________________________________________________
+
+
+PART B : FILENAME EXPANSION
+Fill in the blanks with the appropriate answer.
+
+1. Make certain you have created a directory called "13416" that is contained
+   in your home directory. This may have been previously created.
+
+2. Create a subdirectory within the "13416" directory called "fne".
+
+3. Change to the "fne" directory.
+
+4. Create the following empty files:
+
+   a  ab  abc  abcd  abcd1 abcd2 1a 2abc 3def b C1 C2 D3 123A 123 456
+
+   Command issued: ____________________________________________________________
+
+5. Issue a Linux command to display a detailed listing of all files
+   in the current directory that begin with a letter (upper or lowercase)
+   and end with a number.
+
+   Command issued: ____________________________________________________________
+
+6. Issue a Linux command to display the file contents of all files that end with
+   a number.
+
+   Command issued: ____________________________________________________________
+
+7. Issue a Linux command to remove only files that contain 3 characters (any
+   character like letters, numbers, or special characters).
+
+   Command issued: ____________________________________________________________
+
+8. Issue a Linux command to remove only files that contain 3 characters which
+   are just numbers.
+
+   Command issued: ____________________________________________________________
+
+
+PART C : REGULAR EXPRESSIONS
+
+Using egrep, find the answers to the following.
+All questions refer to the file: ~/data.txt
+If you have not already done so, you should copy this file
+to your home directory.
+
+1. In how many lines does the word "science" appear in the file? _____________
+
+   Command issued: _________________________________________________
+
+2. In how many lines does the word "Science" appear in the file? _____________
+
+   Command issued: _________________________________________________
+
+3. In how many lines does the word "science" or "Science"
+   appear in the file?  ___________
+
+   Command issued: _________________________________________________
+
+4. How many lines contain at exactly three vowels (i.e. "aeiou")? ___________
+
+   Command issued: _________________________________________________
+
+5. In how many lines does the string "at" appear in the file? _______________
+
+   Command issued: _________________________________________________
+
+6. How many lines contain a word that begins with "at"
+
+   Command issued: _________________________________________________
+
+7. How many lines contain a word that ends with "at" ________________
+
+   Command issued: _________________________________________________
+
+8. In how many lines does the string "cat" appear in the file? ____________
+
+   Command issued: _________________________________________________
+
+9. In how many lines does the word "cat" appear in the file? ___________
+
+   Command issued: _________________________________________________
+
+10. In how many lines does a year appear in the file?
+    Example 1960, 2001 etc. _________
+
+   Command issued: _________________________________________________
+
+11. How many lines end with a "." period?  ________________
+
+   Command issued: _________________________________________________
+
+
+### END OF REVIEW QUESTIONS ###
+
++
+
+${editing}  ~/misc.ans
+clear
+cat <<+
+
+You have completed the $(echo -e "\e[0;32mREVIEW QUESTIONS\e[m")
+
++
+else
+clear
+cat <<+
+You have NOT overwritten this file.
+
++
+fi
+read -p "$(echo -e "\e[0;32mPress <ENTER> to Return to Menu & Exit Tutorial\e[m")" null
+		unset snum
+;;
+esac
+done
+
