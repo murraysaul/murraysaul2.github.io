@@ -20,15 +20,15 @@ logfile=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)/Documents/lab2-check-
 
 function check(){
 
- if eval $1; then
-    echo -e "\e[0;32mOK\e[m"
- else
-    echo -e "\e[0;31mWARNING\e[m"
-    echo
-    echo $2
-    echo
-    exit 1
- fi
+  if eval $1; then
+     echo -e "\e[0;32mOK\e[m"
+  else
+     echo -e "\e[0;31mWARNING\e[m"
+     echo
+     echo $2
+     echo
+     exit 1
+  fi
 
 } # end of check() function
 
@@ -41,20 +41,20 @@ clear  # Clear the screen
 # Make certain user is in the home directory
 
 if [ $PWD != $HOME ]; then
- # Start checking lab
- echo -e "\033[1mERROR:\033[0m"
- echo
- echo "You are NOT located in your HOME directory."
- echo -e "(i.e. \033[1m$HOME\033[0m )"
- echo
- echo -en "Issue the \033[1mcd\033[0m command (without arguments)"
- echo -e "and confirm that you are"
- echo -e "currently located in your home directory with the \033[1mpwd\033[0m command,"
- echo "and re-run this checking script."
- echo
- echo
+  # Start checking lab
+  echo -e "\033[1mERROR:\033[0m"
+  echo
+  echo "You are NOT located in your HOME directory."
+  echo -e "(i.e. \033[1m$HOME\033[0m )"
+  echo
+  echo -en "Issue the \033[1mcd\033[0m command (without arguments)"
+  echo -e "and confirm that you are"
+  echo -e "currently located in your home directory with the \033[1mpwd\033[0m command,"
+  echo "and re-run this checking script."
+  echo
+  echo
 
- exit 1
+  exit 1
 fi
 
 # System information gathering
@@ -72,33 +72,24 @@ echo
 
 # Check command "ls" was copied to your home directory
 echo -n "Checking command file \"ls\" was copyied to your home directory: " | tee -a $logfile
-check "test -f $HOME/ls" "The file pathname \"$HOME/ls\" does NOT exist. Check if you properly copied this file to your
-home directory. Properly copy the /bin/ls file to your home directory and re-run this checking script" | tee -a $logfile
+check "test -f $HOME/ls" "The file pathname \"$HOME/ls\" does NOT exist. Check if you properly copied this file to your home directory. Properly copy the /bin/ls file to your home directory and re-run this checking script" | tee -a $logfile
 
 # Check file "ls" was copied to the "tutorial3" directory
 echo -n "Checking \"ls\" file was copied to your \"tutorial3\" directory: " | tee -a $logfile
-check "test -f $HOME/tutorial3/ls" "The file pathname \"~/tutorial3/ls\" does NOT exist. Reissue the correct command to
-copy the ls file from the \"/bin\" directory to \"../..\" pathname which is your \"tutorial3\" directory and re-run this
-checking script" | tee -a $logfile
+check "test -f $HOME/tutorial3/ls" "The file pathname \"~/tutorial3/ls\" does NOT exist. Reissue the correct command to copy the ls file from the \"/bin\" directory to \"../..\" pathname which is your \"tutorial3\" directory and re-run this checking script" | tee -a $logfile
 
 # Check file "ls.bk" moved to "commands" directory
 echo -n "Checking \"ls.bk\" file was movied to the \"tutorial3/practice/commands\" directory: " | tee -a $logfile
-check "test -f $HOME/tutorial3/practice/commands/ls.bk" "The file pathname \"$HOME/tutorial3/practice/commands/ls.bk\" d
-oes NOT exist. Issue the correct command to move the ls.bak file in your \"examples\" directory to the \"commands\" dire
-ctory using relative pathnames and re-run this checking script" | tee -a $logfile
+check "test -f $HOME/tutorial3/practice/commands/ls.bk" "The file pathname \"$HOME/tutorial3/practice/commands/ls.bk\" does NOT exist. Issue the correct command to move the ls.bak file in your \"examples\" directory to the \"commands\" directory using relative pathnames and re-run this checking script" | tee -a $logfile
 
 
 # Check directory "notes" copied to "examples" directory
 echo -n "Checking \"tutorial3/notes\" directory has been copied to the \"examples\" directory: " | tee -a $logfile
-check "test -d $HOME/tutorial3/practice/examples/notes" "The directory pathname \"$HOME/tutorial3/practice/examples/note
-s\" does NOT exist. Issue the correct command to copy the \"notes\" directory to the \"examples\" directory using relati
-ve pathnames and re-run this checking script" | tee -a $logfile
+check "test -d $HOME/tutorial3/practice/examples/notes" "The directory pathname \"$HOME/tutorial3/practice/examples/notes\" does NOT exist. Issue the correct command to copy the \"notes\" directory to the \"examples\" directory using relative pathnames and re-run this checking script" | tee -a $logfile
 
 # Check if "notes" directory moved to "commands" directory
-echo -n "Checking \"tutorial3/notes\" directory has been moved to the \"tutorial3/practice/commands\" directory: " | tee
--a $logfile
-check "test -d $HOME/tutorial3/practice/commands/notes" "The directory pathname \"$HOME/tutorial3/practice/commands/note
-s\" does NOT exist. Re-issue the correct command and re-run this checking script" | tee -a $logfile
+echo -n "Checking \"tutorial3/notes\" directory has been moved to the \"tutorial3/practice/commands\" directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/practice/commands/notes" "The directory pathname \"$HOME/tutorial3/practice/commands/notes\" does NOT exist. Re-issue the correct command and re-run this checking script" | tee -a $logfile
 
 
 warningcount=$(grep -c "WARNING" $logfile)
@@ -107,11 +98,11 @@ echo | tee -a $logfile
 echo | tee -a $logfile
 
 if [ $warningcount == 0 ]; then
- echo "Congratulations!" | tee -a $logfile
- echo | tee -a $logfile
- echo "You have successfully completed Week 3 - Check 2." | tee -a $logfile
- echo
+  echo "Congratulations!" | tee -a $logfile
+  echo | tee -a $logfile
+  echo "You have successfully completed Week 3 - Check 2." | tee -a $logfile
+  echo
 else
- echo "Your Lab is not complete." | tee -a $logfile
- echo "Correct the warnings listed above, then run this script again." | tee -a $logfile
+  echo "Your Lab is not complete." | tee -a $logfile
+  echo "Correct the warnings listed above, then run this script again." | tee -a $logfile
 fi
