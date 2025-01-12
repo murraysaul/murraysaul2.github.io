@@ -1,0 +1,128 @@
+#!/bin/bash
+
+# ./week3-check-1
+
+# Author:  Murray Saul
+# Date:    January 15, 2020
+# Modified By: Jason Carman
+# Modified: September 8, 2024
+#
+# Purpose: Check that user correctly created the specified directory
+#          structure. This shell script will exit if errors,
+#          but will provide feedback to correct the problem.
+#          If no errors, then a congratulatory message will be displayed
+#          so that the user can proceed to the next section.
+
+logfile=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)/Documents/lab2-check-1_output.txt
+
+# Function to indicate OK (in green) if check is true; otherwise, indicate
+# WARNING (in red) if check is false and end with false exit status
+
+function check(){
+
+ if eval $1; then
+    echo -e "\e[0;32mOK\e[m"
+ else
+    echo -e "\e[0;31mWARNING\e[m"
+    echo
+    echo $2
+    echo
+    exit 1
+ fi
+
+} # end of check() function
+
+# Set shell shell history
+HISTFILE=~/.bash_history
+set -o history
+
+clear  # Clear the screen
+
+# Make certain user is in the home directory
+
+if [ $PWD != $HOME ]; then
+ # Start checking lab
+ echo -e "\033[1mERROR:\033[0m"
+ echo
+ echo "You are NOT located in your HOME directory."
+ echo -e "(i.e. \033[1m$HOME\033[0m )"
+ echo
+ echo -en "Issue the \033[1mcd\033[0m command (without arguments)"
+ echo -e "and confirm that you are"
+ echo -e "currently located in your home directory with the \033[1mpwd\033[0m command,"
+ echo "and re-run this checking script."
+ echo
+ echo
+
+ exit 1
+fi
+
+# System information gathering
+echo "COMP1030 Week 3 Check 1 Script" > $logfile
+
+
+# Start checking lab 3
+echo | tee -a $logfile
+echo -e "CHECKING YOUR LAB 3 WORK FOR USERNAME: \033[1m${USER}\033[0m" | tee -a $logfile
+
+# Start checking lab3-check1
+echo
+echo -e "\033[1mCHECKING YOUR WORK:\033[0m"
+echo
+
+# Check directory tutorial3 created in home directory
+echo -n "Checking \"tutorial3\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3" "The directory pathname \"$HOME/tutorial3\" does NOT exist. Check if you mispelled direc
+tory name, or used uppercase letters by mistake. Create the directory \"tutorial3\" in your home directory and re-run th
+is checking script" | tee -a $logfile
+
+# Check directory tutorial3/practice created in home directory
+echo -n "Checking \"tutorial3/practice\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/practice" "The directory pathname \"$HOME/tutorial3/practice\" does NOT exist. Check if y
+ou mispelled directory name, or used uppercase letters by mistake. Create the directory \"tutorial3/practice\" in your h
+ome directory and re-run this checking script" | tee -a $logfile
+
+# Check directory tutorial3/practice/commands created in home directory
+echo -n "Checking \"tutorial3/practice/commands\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/practice/commands" "The directory pathname \"$HOME/tutorial3/practice/commands\" does NOT
+exist. Check if you mispelled directory name, or used uppercase letters by mistake. Create the directory \"tutorial3/pr
+actice/commands\" in your home directory and re-run this checking script" | tee -a $logfile
+
+# Check directory tutorial3/practice/examples created in home directory
+echo -n "Checking \"tutorial3/practice/examples\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/practice/examples" "The directory pathname \"$HOME/tutorial3/practice/examples\" does NOT
+exist. Check if you mispelled directory name, or used uppercase letters by mistake. Create the directory \"tutorial3/pr
+actice/examples\" in your home directory and re-run this checking script" | tee -a $logfile
+
+# Check directory tutorial3/notes created in home directory
+echo -n "Checking \"tutorial3/notes\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/notes" "The directory pathname \"$HOME/tutorial3/notes\" does NOT exist. Check if you mis
+pelled directory name, or used uppercase letters by mistake. Create the directory \"tutorial3/notes\" in your home direc
+tory and re-run this checking script" | tee -a $logfile
+
+# Check directory tutorial3/notes/lesson1 created in home directory
+echo -n "Checking \"tutorial3/notes/lesson1\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/notes/lesson1" "The directory pathname \"$HOME/tutorial3/notes/lesson1\" does NOT exist.
+Check if you mispelled directory name, or used uppercase letters by mistake. Create the directory \"tutorial3/notes/less
+on1\" in your home directory and re-run this checking script" | tee -a $logfile
+
+# Check directory tutorial3/notes/lesson2 created in home directory
+echo -n "Checking \"tutorial3/notes/lesson2\" directory has been created in your home directory: " | tee -a $logfile
+check "test -d $HOME/tutorial3/notes/lesson2" "The directory pathname \"$HOME/tutorial3/notes/lesson2\" does NOT exist.
+Check if you mispelled directory name, or used uppercase letters by mistake. Create the directory \"tutorial3/notes/less
+on2\" in your home directory and re-run this checking script" | tee -a $logfile
+
+warningcount=$(grep -c "WARNING" $logfile)
+
+echo | tee -a $logfile
+echo | tee -a $logfile
+
+if [ $warningcount == 0 ]; then
+ echo "Congratulations!" | tee -a $logfile
+ echo | tee -a $logfile
+ echo "You have successfully completed Week 3 - Check 1." | tee -a $logfile
+ echo
+else
+ echo "Your Lab is not complete." | tee -a $logfile
+ echo "Correct the warnings listed above, then run this script again." | tee -a $logfile
+fi
