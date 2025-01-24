@@ -63,12 +63,11 @@ echo "COMP1030 Week 3 Check 3 Script" > $logfile
 
 # Start checking lab 3
 echo | tee -a $logfile
-echo -e "CHECKING YOUR LAB 3 WORK FOR USERNAME: \033[1m${USER}\033[0m" | tee -a $logfile
+echo -e "CHECKING YOUR LAB 4 WORK FOR USERNAME: \033[1m${USER}\033[0m" | tee -a $logfile
 
-# Start checking lab3-check1
+# Start checking lab4-check3
 echo
 echo -e "\033[1mCHECKING YOUR WORK:\033[0m"
-echo
 
 
 # Check that the "redirect" directory is empty
@@ -84,12 +83,10 @@ check "! ls ~/redirect/* > /dev/null 2> /dev/null" "The directory pathname \"$HO
 warningcount=$(grep -c "WARNING" $logfile)
 
 echo | tee -a $logfile
-echo | tee -a $logfile
 
 if [ $warningcount == 0 ]; then
   echo "Congratulations!" | tee -a $logfile
-  echo | tee -a $logfile
-  echo "You have successfully completed Week 3 - Check 3." | tee -a $logfile
+  echo "You have successfully completed Week 4 - Check 3." | tee -a $logfile
   echo
 else
   echo "Your Lab is not complete." | tee -a $logfile
